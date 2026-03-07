@@ -66,8 +66,6 @@ function naritive_capture_lead( $request ) {
         return naritive_amp_response( [ 'success' => false, 'message' => 'Failed to save lead' ], 500 );
     }
 
-    error_log( "Lead pushed to Salesforce: $first_name $last_name | $email | $phone" );
-
     return naritive_amp_response( [ 'success' => true ] );
 }
 
