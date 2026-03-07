@@ -1,0 +1,39 @@
+# WordPress Core (don't commit core files)
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Uploads
+/wp-content/uploads/
+
+# Cache & logs
+/wp-content/cache/
+/wp-content/upgrade/
+*.log
+
+# Environment & credentials
+wp-config.php
+config.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Node
+node_modules/
+npm-debug.log
+
+# Themes - ignore default bundled themes, keep your own
+/wp-content/themes/twenty*/
+
+# Plugins - ignore everything except your custom plugin
+/wp-content/plugins/*
