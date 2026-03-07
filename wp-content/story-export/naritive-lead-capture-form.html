@@ -1,0 +1,523 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script
+      async
+      custom-element="amp-story"
+      src="https://cdn.ampproject.org/v0/amp-story-1.0.js"
+    ></script>
+    <script
+      async
+      custom-element="amp-form"
+      src="https://cdn.ampproject.org/v0/amp-form-0.1.js"
+    ></script>
+    <script
+      async
+      custom-template="amp-mustache"
+      src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
+    ></script>
+    <style amp-boilerplate="">
+      body {
+        -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+        animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+      }
+      @-webkit-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-moz-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-ms-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @-o-keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+      @keyframes -amp-start {
+        from {
+          visibility: hidden;
+        }
+        to {
+          visibility: visible;
+        }
+      }
+    </style>
+    <noscript
+      ><style amp-boilerplate="">
+        body {
+          -webkit-animation: none;
+          -moz-animation: none;
+          -ms-animation: none;
+          animation: none;
+        }
+      </style></noscript
+    >
+    <style amp-custom="">
+      h1,
+      h2,
+      h3 {
+        font-weight: normal;
+      }
+
+      i-amphtml-story-page-attachment-domain-label {
+        display: none;
+      }
+
+      amp-story-page {
+        background-color: #131516;
+      }
+
+      amp-story-grid-layer {
+        overflow: visible;
+      }
+
+      @media (max-aspect-ratio: 9 / 16) {
+        @media (min-aspect-ratio: 320 / 678) {
+          amp-story-grid-layer.grid-layer {
+            margin-top: calc((100% / 0.5625 - 100% / 0.6666666666666666) / 2);
+          }
+        }
+      }
+
+      @media not all and (min-resolution: 0.001dpcm) {
+        @media {
+          p.text-wrapper > span {
+            font-size: calc(100% - 0.5px);
+          }
+        }
+      }
+
+      .page-fullbleed-area,
+      .page-background-overlay-area {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        left: 0;
+        height: calc(1.1851851851851851 * 100%);
+        top: calc((1 - 1.1851851851851851) * 100% / 2);
+      }
+
+      .element-overlay-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .page-safe-area {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: calc(0.84375 * 100%);
+        margin: auto 0;
+      }
+
+      .mask {
+        position: absolute;
+        overflow: hidden;
+      }
+
+      .fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .animation-wrapper {
+          opacity: var(--initial-opacity);
+          transform: var(--initial-transform);
+        }
+      }
+
+      amp-story-grid-layer.align-bottom {
+        align-content: end;
+        padding: 0;
+        max-height: calc(100vh - (2 * 74px));
+      }
+
+      .captions-area {
+        padding: 0 32px 0;
+      }
+      amp-story-captions {
+        margin-bottom: 16px;
+        text-align: center;
+      }
+      amp-story-audio-sticker {
+        height: 100%;
+      }
+
+      .audio-sticker {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans,
+          Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      }
+
+      /* ── CTA Overlay on story page ── */
+      .cta-overlay {
+        position: absolute;
+        bottom: 100px;
+        width: 100%;
+        text-align: center;
+        padding: 0 24px;
+        box-sizing: border-box;
+      }
+
+      .cta-overlay h2 {
+        color: #ffffff;
+        font-size: 26px;
+        font-weight: bold;
+        margin: 0 0 8px 0;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      }
+
+      .cta-overlay p {
+        color: #ffffff;
+        font-size: 15px;
+        margin: 0 0 16px 0;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+      }
+
+      .cta-arrow {
+        font-size: 28px;
+        color: #73f3f3;
+        animation: bounce 1.2s infinite;
+        display: block;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+
+      /* ── Page Attachment Form Styles ── */
+      .attachment-inner {
+        padding: 32px 24px;
+        background: #ffffff;
+        min-height: 100%;
+        box-sizing: border-box;
+      }
+
+      .attachment-inner h2 {
+        font-size: 22px;
+        font-weight: bold;
+        color: #131516;
+        margin: 0 0 6px 0;
+      }
+
+      .attachment-inner p.subtitle {
+        font-size: 14px;
+        color: #666;
+        margin: 0 0 24px 0;
+      }
+
+      .attachment-inner form fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .attachment-inner label {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 4px;
+        margin-top: 16px;
+      }
+
+      .attachment-inner input[type="text"],
+      .attachment-inner input[type="email"],
+      .attachment-inner input[type="tel"] {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1.5px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+        box-sizing: border-box;
+        color: #131516;
+        background: #f9f9f9;
+      }
+
+      .attachment-inner input[type="text"]:focus,
+      .attachment-inner input[type="email"]:focus,
+      .attachment-inner input[type="tel"]:focus {
+        border-color: #73f3f3;
+        background: #fff;
+        outline: none;
+      }
+
+      .attachment-inner input[type="submit"] {
+        margin-top: 24px;
+        width: 100%;
+        padding: 14px;
+        background-color: #73f3f3;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #131516;
+        letter-spacing: 0.5px;
+      }
+
+      .success-msg {
+        margin-top: 24px;
+        padding: 20px;
+        background: #e6fffe;
+        border-radius: 8px;
+        text-align: center;
+        color: #131516;
+        font-size: 16px;
+        border: 1px solid #73f3f3;
+      }
+
+      .error-msg {
+        margin-top: 12px;
+        padding: 12px;
+        background: #fff0f0;
+        border-radius: 8px;
+        color: #cc0000;
+        font-size: 14px;
+        border: 1px solid #ffcccc;
+      }
+    </style>
+    <meta name="web-stories-replace-head-start" />
+    <title>Naritive Lead Capture Form</title>
+    <link
+      rel="canonical"
+      href="http://naritive-lead-capture.local/web-stories/naritive-lead-capture-form-2/"
+    />
+    <meta name="web-stories-replace-head-end" />
+  </head>
+  <body>
+    <amp-story
+      standalone=""
+      publisher="Naritive Lead Capture"
+      publisher-logo-src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=96&h=96&fit=max"
+      title="Naritive Lead Capture Form"
+      poster-portrait-src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=640&h=853&fit=max"
+    >
+      <amp-story-page id="da55962c-6224-4767-b817-1ef037325e20">
+        <!-- Background image layer -->
+        <amp-story-grid-layer
+          template="vertical"
+          aspect-ratio="412:618"
+          class="grid-layer"
+        >
+          <div class="page-fullbleed-area" style="background-color: #73f3f3">
+            <div class="page-safe-area">
+              <div
+                style="
+                  position: absolute;
+                  pointer-events: none;
+                  left: 0;
+                  top: -9.25926%;
+                  width: 100%;
+                  height: 118.51852%;
+                  opacity: 1;
+                "
+              >
+                <div
+                  style="
+                    pointer-events: initial;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 0;
+                  "
+                  class="mask"
+                  id="el-9bfd3258-2e77-4c36-beb6-cf3090ac34cc"
+                >
+                  <div
+                    style="
+                      position: absolute;
+                      width: 266.70165%;
+                      height: 100%;
+                      left: -103.86365%;
+                      top: 0%;
+                    "
+                    data-leaf-element="true"
+                  >
+                    <amp-img
+                      layout="fill"
+                      src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=3812&h=2541&fit=max"
+                      alt="red xbox one game controller"
+                      srcSet="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=3812&h=2541&fit=max 3812w,https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=2287&h=1524&fit=max 2287w,https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=762&h=508&fit=max 762w"
+                      sizes="(min-width: 1024px) 120vh, 267vw"
+                      disable-inline-width="true"
+                    ></amp-img>
+                  </div>
+                  <div
+                    class="element-overlay-area"
+                    style="
+                      background-image: linear-gradient(
+                        0.5turn,
+                        rgba(0, 0, 0, 0) 0%,
+                        rgba(0, 0, 0, 0.7) 100%
+                      );
+                    "
+                  ></div>
+                </div>
+              </div>
+              <div
+                class="page-background-overlay-area"
+                style="
+                  background-image: linear-gradient(
+                    0.5turn,
+                    rgba(0, 0, 0, 0) 0%,
+                    rgba(0, 0, 0, 0.7) 100%
+                  );
+                "
+              ></div>
+            </div>
+          </div>
+        </amp-story-grid-layer>
+
+        <!-- CTA text overlay pointing to the form -->
+        <amp-story-grid-layer template="vertical" aspect-ratio="412:618">
+          <div class="page-safe-area">
+            <div class="cta-overlay">
+              <h2>Get in Touch</h2>
+              <p>Swipe up to fill in your details</p>
+              <span class="cta-arrow">↑</span>
+            </div>
+          </div>
+        </amp-story-grid-layer>
+
+        <!-- Page attachment containing the form -->
+        <amp-story-page-attachment
+          layout="nodisplay"
+          theme="light"
+          cta-text="Fill in the Form"
+        >
+          <div class="attachment-inner">
+            <h2>Get in Touch</h2>
+            <p class="subtitle">Fill in your details and we'll be in touch.</p>
+
+            <form
+              method="post"
+              action-xhr="https://naritive-lead-capture.local/wp-json/naritive-salesforce/v1/leads"
+              target="_top"
+            >
+              <fieldset>
+                <label for="first_name">First Name</label>
+                <input
+                  type="text"
+                  id="first_name"
+                  name="first_name"
+                  placeholder="Jane"
+                  required
+                />
+                <span visible-when-invalid="valueMissing"
+                  >First name is required</span
+                >
+
+                <label for="last_name">Last Name</label>
+                <input
+                  type="text"
+                  id="last_name"
+                  name="last_name"
+                  placeholder="Doe"
+                  required
+                />
+                <span visible-when-invalid="valueMissing"
+                  >Last name is required</span
+                >
+
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  pattern="^[^@\s]+@[^@\s]+\.[^@\s]{2,}$"
+                  placeholder="jane@example.com"
+                  inputmode="email"
+                  required
+                />
+                <span visible-when-invalid="valueMissing"
+                  >Email is required</span
+                >
+                <span visible-when-invalid="patternMismatch">
+                  Please enter a valid email address (example: name@domain.com)
+                </span>
+
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="^\+?[0-9\s]{10,15}$"
+                  placeholder="0712345678"
+                  required
+                />
+                <span visible-when-invalid="patternMismatch">
+                  Please enter a valid phone number
+                </span>
+
+                <input type="submit" value="Submit" />
+              </fieldset>
+
+              <div submit-success>
+                <template type="amp-mustache">
+                  <div class="success-msg">Thanks! We'll be in touch soon.</div>
+                </template>
+              </div>
+
+              <div submit-error>
+                <template type="amp-mustache">
+                  <div class="error-msg">
+                    Something went wrong. Please try again.
+                  </div>
+                </template>
+              </div>
+            </form>
+          </div>
+        </amp-story-page-attachment>
+      </amp-story-page>
+    </amp-story>
+  </body>
+</html>
