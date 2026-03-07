@@ -37,3 +37,4 @@ npm-debug.log
 
 # Plugins - ignore everything except your custom plugin
 /wp-content/plugins/*
+!/wp-content/plugins/naritive-salesforce-integration/
