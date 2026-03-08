@@ -19,6 +19,6 @@ Salesforce REST API (OAuth2 Client Credentials)
 
 Notes
 
-config.php is gitignored — never commit credentials
+config.php is gitignored
 The story HTML reference is in story-export/
 The REST endpoint lives at /wp-json/naritive-salesforce/v1/leads
