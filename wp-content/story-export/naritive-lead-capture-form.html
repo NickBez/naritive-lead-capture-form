@@ -1,4 +1,4 @@
-<html lang="en">
+﻿<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta
@@ -21,6 +21,10 @@
       custom-template="amp-mustache"
       src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
     <style amp-boilerplate="">
       body {
         -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
@@ -84,6 +88,7 @@
       h2,
       h3 {
         font-weight: normal;
+        font-family: "Roboto", sans-serif;
       }
 
       i-amphtml-story-page-attachment-domain-label {
@@ -236,6 +241,16 @@
         background: #ffffff;
         min-height: 100%;
         box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
+
+      .attachment-inner label,
+      .attachment-inner input,
+      .attachment-inner textarea,
+      .attachment-inner p,
+      .success-msg,
+      .error-msg {
+        font-family: "Roboto", sans-serif;
       }
 
       .attachment-inner h2 {
