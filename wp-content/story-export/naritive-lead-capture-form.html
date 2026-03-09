@@ -173,14 +173,14 @@
       amp-story-grid-layer.align-bottom {
         align-content: end;
         padding: 0;
-        max-height: calc(100vh - (2 * 74px));
+        max-height: calc(100vh - (2 * 4.625rem));
       }
 
       .captions-area {
-        padding: 0 32px 0;
+        padding: 0 2rem 0;
       }
       amp-story-captions {
-        margin-bottom: 16px;
+        margin-bottom: 1rem;
         text-align: center;
       }
       amp-story-audio-sticker {
@@ -196,30 +196,32 @@
       /* ── CTA Overlay on story page ── */
       .cta-overlay {
         position: absolute;
-        bottom: 100px;
+        bottom: 6.25rem;
         width: 100%;
         text-align: center;
-        padding: 0 24px;
+        padding: 0 1.5rem;
         box-sizing: border-box;
       }
 
       .cta-overlay h2 {
         color: #ffffff;
-        font-size: 26px;
+        font-size: 1.625rem;
         font-weight: bold;
-        margin: 0 0 8px 0;
+        margin: 0 0 0.5rem 0;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        font-family: "Roboto", sans-serif;
       }
 
       .cta-overlay p {
         color: #ffffff;
-        font-size: 15px;
-        margin: 0 0 16px 0;
+        font-size: 1rem;
+        margin: 0 0 1rem 0;
         text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+        font-family: "Roboto", sans-serif;
       }
 
       .cta-arrow {
-        font-size: 28px;
+        font-size: 1.75rem;
         color: #73f3f3;
         animation: bounce 1.2s infinite;
         display: block;
@@ -231,13 +233,13 @@
           transform: translateY(0);
         }
         50% {
-          transform: translateY(-8px);
+          transform: translateY(-0.5rem);
         }
       }
 
       /* ── Page Attachment Form Styles ── */
       .attachment-inner {
-        padding: 32px 24px;
+        padding: 2rem 1.5rem;
         background: #ffffff;
         min-height: 100%;
         box-sizing: border-box;
@@ -254,16 +256,16 @@
       }
 
       .attachment-inner h2 {
-        font-size: 22px;
+        font-size: 1.625rem;
         font-weight: bold;
         color: #131516;
-        margin: 0 0 6px 0;
+        margin: 0 0 0.5rem 0;
       }
 
       .attachment-inner p.subtitle {
-        font-size: 14px;
+        font-size: 0.875rem;
         color: #666;
-        margin: 0 0 24px 0;
+        margin: 0 0 1.5rem 0;
       }
 
       .attachment-inner form fieldset {
@@ -274,21 +276,21 @@
 
       .attachment-inner label {
         display: block;
-        font-size: 13px;
+        font-size: 0.875rem;
         font-weight: bold;
         color: #333;
-        margin-bottom: 4px;
-        margin-top: 16px;
+        margin-bottom: 0.25rem;
+        margin-top: 1rem;
       }
 
       .attachment-inner input[type="text"],
       .attachment-inner input[type="email"],
       .attachment-inner input[type="tel"] {
         width: 100%;
-        padding: 10px 14px;
+        padding: 0.625rem 0.875rem;
         border: 1.5px solid #ddd;
-        border-radius: 8px;
-        font-size: 15px;
+        border-radius: 0.5rem;
+        font-size: 1rem;
         box-sizing: border-box;
         color: #131516;
         background: #f9f9f9;
@@ -303,13 +305,13 @@
       }
 
       .attachment-inner input[type="submit"] {
-        margin-top: 24px;
+        margin-top: 1.5rem;
         width: 100%;
-        padding: 14px;
+        padding: 0.875rem;
         background-color: #73f3f3;
         border: none;
-        border-radius: 8px;
-        font-size: 16px;
+        border-radius: 0.5rem;
+        font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
         color: #131516;
@@ -317,23 +319,23 @@
       }
 
       .success-msg {
-        margin-top: 24px;
-        padding: 20px;
+        margin-top: 1.5rem;
+        padding: 1.25rem;
         background: #e6fffe;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         text-align: center;
         color: #131516;
-        font-size: 16px;
+        font-size: 1rem;
         border: 1px solid #73f3f3;
       }
 
       .error-msg {
-        margin-top: 12px;
-        padding: 12px;
+        margin-top: 0.75rem;
+        padding: 0.75rem;
         background: #fff0f0;
-        border-radius: 8px;
+        border-radius: 0.5rem;
         color: #cc0000;
-        font-size: 14px;
+        font-size: 1rem;
         border: 1px solid #ffcccc;
       }
     </style>
@@ -402,7 +404,7 @@
                       src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=3812&h=2541&fit=max"
                       alt="red xbox one game controller"
                       srcSet="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=3812&h=2541&fit=max 3812w,https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=2287&h=1524&fit=max 2287w,https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?ixlib=rb-4.1.0&fm=jpg&w=762&h=508&fit=max 762w"
-                      sizes="(min-width: 1024px) 120vh, 267vw"
+                      sizes="(min-width: 64rem) 120vh, 267vw"
                       disable-inline-width="true"
                     ></amp-img>
                   </div>
